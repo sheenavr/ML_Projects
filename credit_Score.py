@@ -2,14 +2,17 @@
 
 Banks and credit card companies calculate your credit score to determine your creditworthiness. 
 
-It helps banks and credit card companies immediately to issue loans to customers with good creditworthiness. Today banks and credit card companies use Machine Learning algorithms to classify all the customers in their database based on their credit history. 
+It helps banks and credit card companies immediately to issue loans to customers with good creditworthiness. 
+Today banks and credit card companies use Machine Learning algorithms to classify all the customers 
+in their database based on their credit history. 
 Credit Score Classification
 There are three credit scores that banks and credit card companies use to label their customers:
 
 Good
 Standard
 Poor
-A person with a good credit score will get loans from any bank and financial institution. For the task of Credit Score Classification, we need a labelled dataset with credit scores.
+A person with a good credit score will get loans from any bank and financial institution. 
+For the task of Credit Score Classification, we need a labelled dataset with credit scores.
 
 Credit Score Classification using Python
 Let’s start the task of credit score classification by importing the necessary Python libraries and the dataset:
@@ -32,14 +35,13 @@ print(data.info())
 
 print(data.isnull().sum())
 
-The dataset doesn’t have any null values. As this dataset is labelled, let’s have a look at the Credit_Score column values:
+The dataset doesn’t have any null values. As this dataset is labelled, the Credit_Score column values:
 
 data["Credit_Score"].value_counts()
 
 Data Exploration
-The dataset has many features that can train a Machine Learning model for credit score classification. Let’s explore all the features one by one.
+The dataset has many features that can train a Machine Learning model for credit score classification. 
 
-I will start by exploring the occupation feature to know if the occupation of the person affects credit scores:
 
 fig = px.box(data, 
              x="Occupation",  
