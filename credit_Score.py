@@ -64,7 +64,8 @@ fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
 
-According to the above visualization, the more you earn annually, the better your credit score is. Now let’s explore whether the monthly in-hand salary impacts credit scores or not:
+According to the above visualization, the more you earn annually, the better your credit score is.
+Now Check whether the monthly in-hand salary impacts credit scores or not:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -77,7 +78,8 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-Like annual income, the more monthly in-hand salary you earn, the better your credit score will become. Now let’s see if having more bank accounts impacts credit scores or not:
+Like annual income, the more monthly in-hand salary you earn, the better your credit score will become. 
+Now Check if having more bank accounts impacts credit scores or not:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -103,7 +105,9 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-Just like the number of bank accounts, having more credit cards will not positively impact your credit scores. Having 3 – 5 credit cards is good for your credit score. Now let’s see the impact on credit scores based on how much average interest you pay on loans and EMIs:
+Just like the number of bank accounts, having more credit cards will
+not positively impact your credit scores. Having 3 – 5 credit cards is good for your credit score.
+Now Check the impact on credit scores based on how much average interest you pay on loans and EMIs:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -116,7 +120,8 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-If the average interest rate is 4 – 11%, the credit score is good. Having an average interest rate of more than 15% is bad for your credit scores. Now let’s see how many loans you can take at a time for a good credit score:
+If the average interest rate is 4 – 11%, the credit score is good. Having an average interest 
+rate of more than 15% is bad for your credit scores. Now Check how many loans you can take at a time for a good credit score:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -155,7 +160,9 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-So delaying 4 – 12 payments from the due date will not affect your credit scores. But delaying more than 12 payments from the due date will affect your credit scores negatively. Now let’s see if having more debt will affect credit scores or not:
+So delaying 4 – 12 payments from the due date will not affect your credit scores.
+But delaying more than 12 payments from the due date will affect your credit scores negatively.
+Now Check if having more debt will affect credit scores or not:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -168,7 +175,9 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-An outstanding debt of $380 – $1150 will not affect your credit scores. But always having a debt of more than $1338 will affect your credit scores negatively. Now let’s see if having a high credit utilization ratio will affect credit scores or not:
+An outstanding debt of $380 – $1150 will not affect your credit scores.
+But always having a debt of more than $1338 will affect your credit scores negatively. 
+Now Check if having a high credit utilization ratio will affect credit scores or not:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -181,7 +190,9 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-Credit utilization ratio means your total debt divided by your total available credit. According to the above figure, your credit utilization ratio doesn’t affect your credit scores. Now let’s see how the credit history age of a person affects credit scores:
+Credit utilization ratio means your total debt divided by your total available credit. 
+According to the above figure, your credit utilization ratio doesn’t affect your credit scores.
+Now Check how the credit history age of a person affects credit scores:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -194,7 +205,8 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-So, having a long credit history results in better credit scores. Now let’s see how many EMIs you can have in a month for a good credit score:
+So, having a long credit history results in better credit scores. 
+Now Check how many EMIs you can have in a month for a good credit score:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -207,7 +219,8 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-The number of EMIs you are paying in a month doesn’t affect much on credit scores. Now let’s see if your monthly investments affect your credit scores or not:
+The number of EMIs you are paying in a month doesn’t affect much on credit scores.
+Now Check if your monthly investments affect your credit scores or not:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -220,7 +233,8 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-The amount of money you invest monthly doesn’t affect your credit scores a lot. Now let’s see if having a low amount at the end of the month affects credit scores or not:
+The amount of money you invest monthly doesn’t affect your credit scores a lot.
+Now Check if having a low amount at the end of the month affects credit scores or not:
 
 fig = px.box(data, 
              x="Credit_Score", 
@@ -233,12 +247,15 @@ fig = px.box(data,
 fig.update_traces(quartilemethod="exclusive")
 fig.show()
 
-So, having a high monthly balance in your account at the end of the month is good for your credit scores. A monthly balance of less than $250 is bad for credit scores.
+So, having a high monthly balance in your account at the end of the month is good for your credit scores. 
+A monthly balance of less than $250 is bad for credit scores.
 
 Credit Score Classification Model
-One more important feature (Credit Mix) in the dataset is valuable for determining credit scores. The credit mix feature tells about the types of credits and loans you have taken.
+One more important feature (Credit Mix) in the dataset is valuable for determining credit scores. 
+The credit mix feature tells about the types of credits and loans you have taken.
 
-As the Credit_Mix column is categorical, I will transform it into a numerical feature so that we can use it to train a Machine Learning model for the task of credit score classification:
+As the Credit_Mix column is categorical, I will transform it into a numerical feature so that we can use it to train a 
+Machine Learning model for the task of credit score classification:
 
 data["Credit_Mix"] = data["Credit_Mix"].map({"Standard": 1, 
                                "Good": 2, 
@@ -255,7 +272,7 @@ x = np.array(data[["Annual_Income", "Monthly_Inhand_Salary",
                    "Credit_History_Age", "Monthly_Balance"]])
 y = np.array(data[["Credit_Score"]])
 
-Now, let’s split the data into training and test sets and proceed further by training a credit score classification model:
+Now,  split the data into training and test sets and proceed further by training a credit score classification model:
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -269,7 +286,7 @@ ytest = ytest.ravel()
 model = RandomForestClassifier()
 model.fit(xtrain, ytrain)
 
-Now, let’s make predictions from our model by giving inputs to our model according to the features we used to train the model:
+Now,  make predictions from our model by giving inputs to our model according to the features we used to train the model:
 
 print("Credit Score Prediction : ")
 a = float(input("Annual Income: "))
