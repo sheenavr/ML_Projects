@@ -15,7 +15,7 @@ A person with a good credit score will get loans from any bank and financial ins
 For the task of Credit Score Classification, we need a labelled dataset with credit scores.
 
 Credit Score Classification using Python
-Let’s start the task of credit score classification by importing the necessary Python libraries and the dataset:
+
 
 import pandas as pd
 import numpy as np
